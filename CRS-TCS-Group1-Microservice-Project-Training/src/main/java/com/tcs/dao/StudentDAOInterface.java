@@ -18,7 +18,12 @@ public interface StudentDAOInterface {
 	public List list() throws SQLException;
 	public Student getId(int id) throws SQLException; 
 //	public Student create(Student student);
-//	public int delete(int id);
+//	public Student delete(int id) throws SQLException;
 //	public Student update(int id, Student student);
-//	public void insert(Student student);
+	public Student insert(Student student) throws SQLException;
+	/**
+	 * @return the students
+	 * @throws SQLException 
+	 */
+	public Student update(int id, Student student) throws SQLException;
 }

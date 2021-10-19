@@ -26,7 +26,9 @@ public class Student {
 	/**
 	 * @return the studentId
 	 */
-	
+	public Student() {
+		
+	}
 	/**
 	 * @param l the studentId to set
 	 */
@@ -36,7 +38,7 @@ public class Student {
 	/**
 	 * @return the studentId
 	 */
-	public long getStudentId() {
+	public int getStudentId() {
 		return studentId;
 	}
 

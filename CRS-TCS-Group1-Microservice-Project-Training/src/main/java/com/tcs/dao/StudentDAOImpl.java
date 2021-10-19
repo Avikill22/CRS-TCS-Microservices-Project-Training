@@ -49,34 +49,39 @@ public class StudentDAOImpl implements StudentDAOInterface{
 //	}
 //
 //	@Override
-//	public int delete(int id) {
-//		for (Student c : students) {
-//			if(c.getStudentId()==id){
-//				students.remove(id);
-//				return id;
-//			}
-//		}
-//		return -1;
+//	public Student delete(int id) throws SQLException {
+//		PreparedStatement stmt = con.prepareStatement(sql.DELETE_SELECTED_ID_STUDENT_DATA);
+//		stmt.setInt(1, id);
+//			
+//			if(stmt.executeUpdate()!=0) {
+//				return 
+//			};
+//			
+//			return null;
+//			
 //	}
 //
-//	@Override
-//	public Student update(int id, Student student) {
-//		for (Student c : students) {
-//			if(c.getStudentId()==id){
-//				student.setStudentId((int) c.getStudentId());
-//				students.remove(c);
-//				students.add(student);
-//				return student;
-//			}
-//		}
-//		return null;
-//	}
+	@Override
+	public Student update(int id, Student student) throws SQLException {
+		PreparedStatement stmt=con.prepareStatement("update students set studentRollNo=?, studentDept=? where studentId=?");  
+		stmt.setString(1,student.getStudentRollNo());//1 specifies the first parameter in the query i.e. name  
+		stmt.setString(2,student.getStudentDept());
+		stmt.setInt(3, id );
+		int i = stmt.executeUpdate();
+		
+		return student;
+	}
 //
-//	@Override
-//	public void insert(Student student) {
-//		students.add(student);
-//		
-//	}
+	@Override
+	public Student insert(Student student) throws SQLException {
+		PreparedStatement stmt=con.prepareStatement("insert into students values(?,?,?)");
+		stmt.setInt(1,student.getStudentId());
+		stmt.setString(2,student.getStudentRollNo());
+		stmt.setString(3,student.getStudentDept());
+		
+		int i = stmt.executeUpdate();
+		return student;
+	}
 //
 	@Override
 	public Student getId(int id) throws SQLException {

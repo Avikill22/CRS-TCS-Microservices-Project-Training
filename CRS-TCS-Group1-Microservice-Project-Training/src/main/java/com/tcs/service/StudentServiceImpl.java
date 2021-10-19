@@ -45,21 +45,27 @@ public class StudentServiceImpl implements StudentServiceInterface {
 //	}
 //
 //	@Override
-//	public Long delete(int id) {
+//	public Student delete(int id) throws SQLException {
 //		// TODO Auto-generated method stub
-//		return  students.delete(id);
+//		return students.delete(id);
 //	}
 //
-//	@Override
-//	public Student update(int id, Student student) {
-//		// TODO Auto-generated method stub
-//		return students.update(id, student);
-//	}
+	@Override
+	public Student update(int id, Student student)throws SQLException {
+		// TODO Auto-generated method stub
+		return students.update(id, student);
+	}
 //
-//	@Override
-//	public void insert(Student student) {
-//		students.insert(student);
-//	}
+	@Override
+	public Student insert(Student student) throws SQLException {
+		return students.insert(student);
+	}
+
+//@Override
+//public Student delete(int id) throws SQLException {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
 	
 	
 }

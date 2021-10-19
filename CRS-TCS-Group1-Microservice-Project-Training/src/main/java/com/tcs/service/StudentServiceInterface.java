@@ -17,8 +17,11 @@ public interface StudentServiceInterface {
 	public List studentList() throws SQLException;
 	public Student getId(int id) throws SQLException;
 //	public Student create(Student student);
-//	public Long delete(Long id);
+	//public Student delete(int id) throws SQLException;
 //	public Student update(Long id, Student student);
-//	public void insert(Student student);
+
+	public Student insert(Student student) throws SQLException;
+	public Student update(int id, Student student)throws SQLException;
+	
 	
 }
