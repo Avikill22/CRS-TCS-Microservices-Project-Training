@@ -36,6 +36,7 @@ public class StudentDAOImpl implements StudentDAOInterface{
 	}
 
 	/**
+	 * @return 
 	 * @return the students
 	 * @throws SQLException 
 	 */
@@ -48,18 +49,20 @@ public class StudentDAOImpl implements StudentDAOInterface{
 //		return student;
 //	}
 //
-//	@Override
-//	public Student delete(int id) throws SQLException {
-//		PreparedStatement stmt = con.prepareStatement(sql.DELETE_SELECTED_ID_STUDENT_DATA);
-//		stmt.setInt(1, id);
-//			
-//			if(stmt.executeUpdate()!=0) {
-//				return 
-//			};
-//			
-//			return null;
-//			
-//	}
+	@Override
+	public Student delete(int id) throws SQLException {
+		String s = sql.VIEW_SELECTED_STUDENT+ id;
+		PreparedStatement stmt = con.prepareStatement(s);
+		ResultSet rs= stmt.executeQuery();
+		stmt = con.prepareStatement(sql.DELETE_SELECTED_ID_STUDENT_DATA);
+		stmt.setInt(1, id);
+		stmt.execute();
+		
+		if (rs.next())
+			return new Student(rs.getInt("studentId"),rs.getString("studentRollNo"),rs.getString("studentDept"));
+		return null;
+			
+	}
 //
 	@Override
 	public Student update(int id, Student student) throws SQLException {

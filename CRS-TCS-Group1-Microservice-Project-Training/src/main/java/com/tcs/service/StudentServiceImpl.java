@@ -44,11 +44,11 @@ public class StudentServiceImpl implements StudentServiceInterface {
 //		return students.create(student);
 //	}
 //
-//	@Override
-//	public Student delete(int id) throws SQLException {
-//		// TODO Auto-generated method stub
-//		return students.delete(id);
-//	}
+	@Override
+	public Student delete(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return students.delete(id);
+	}
 //
 	@Override
 	public Student update(int id, Student student)throws SQLException {

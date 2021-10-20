@@ -46,24 +46,24 @@ public class StudentRestController {
 	@RequestMapping(value="/students/{id}",method=RequestMethod.GET)
 	public ResponseEntity getCustomer(@PathVariable("id") int id) throws SQLException {
 
-		Student customer = students.getId(id);
-		if (customer == null) {
+		Student studentId = students.getId(id);
+		if (studentId == null) {
 			return new ResponseEntity("No Customer found for ID " + id, HttpStatus.NOT_FOUND);
 		}
 
-		return new ResponseEntity(customer, HttpStatus.OK);
+		return new ResponseEntity(studentId, HttpStatus.OK);
 	}
 
-//	@DeleteMapping("/delete/customers/{id}")
-////	public ResponseEntity deleteCustomer(@PathVariable int id) throws SQLException {
-////
-////		if (null == StudentServiceImpl.delete(id)) {
-////			return new ResponseEntity("No Customer found for ID " + id, HttpStatus.NOT_FOUND);
-////		}
-////
-////		return new ResponseEntity(id, HttpStatus.OK);
-////
-////	}
+	@DeleteMapping("/delete/student/{id}")
+	public ResponseEntity deleteCustomer(@PathVariable int id) throws SQLException {
+		Student stud = students.delete(id);
+		if (null == stud) {
+			return new ResponseEntity("No Customer found for ID " + id, HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity(id, HttpStatus.OK);
+
+	}
 	@PostMapping(value = "/post/student")
 	public ResponseEntity createCustomer(@RequestBody Student student) throws SQLException {
 
