@@ -6,22 +6,21 @@ package com.tcs.service;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.tcs.bean.Course;
+import org.springframework.stereotype.Component;
+
 import com.tcs.bean.Student;
+import com.tcs.exception.StudentNotRegisteredException;
 
 /**
- * @author Avinash Gupta
+ * @author ashwi
  *
  */
 public interface StudentServiceInterface {
 	public List studentList() throws SQLException;
 	public Student getId(int id) throws SQLException;
-//	public Student create(Student student);
-	public Student delete(int id) throws SQLException;
-//	public Student update(Long id, Student student);
 
-	public Student insert(Student student) throws SQLException;
+
+	public Student insert(Student student) throws SQLException, StudentNotRegisteredException;
 	public Student update(int id, Student student)throws SQLException;
-	
 	
 }

@@ -8,20 +8,47 @@ package com.tcs.bean;
  *
  */
 public class User {
-	private String userId;
+	private int userId;
 	private String userName;
-	private String userPassword;
-	private String userEmail;
+	private String password;
+	
+	
+	/**
+	 * @param userId
+	 * @param userName
+	 * @param password
+	 */
+	
+	
+	
+	
+	
+	
+
 	/**
 	 * @return the userId
 	 */
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 	/**
+	 * @param userId
+	 * @param userName
+	 * @param password
+	 * @param logStatus
+	 */
+	public User(int userId, String userName, String password) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+		
+	}
+	
+	/**
 	 * @param userId the userId to set
 	 */
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	/**
@@ -37,32 +64,17 @@ public class User {
 		this.userName = userName;
 	}
 	/**
-	 * @return the userPassword
+	 * @return the password
 	 */
-	public String getUserPassword() {
-		return userPassword;
+	public String getPassword() {
+		return password;
 	}
 	/**
-	 * @param userPassword the userPassword to set
+	 * @param password the password to set
 	 */
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	/**
-	 * @return the userEmail
-	 */
-	public String getUserEmail() {
-		return userEmail;
-	}
-	/**
-	 * @param userEmail the userEmail to set
-	 */
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
-	
-	
-
 	
 	
 }

@@ -4,48 +4,45 @@
 package com.tcs.bean;
 
 /**
- * @author Avinash Gupta
+ * @author ganes
  *
  */
 public class Professor {
-	private String empId;
-	private String empDepartment;
-	private String courseAllocation;
+	private int professorId;
 	/**
-	 * @return the empId
+	 * @param professorId
+	 * @param professorName
 	 */
-	public String getEmpId() {
-		return empId;
+	public Professor(int professorId, String professorName) {
+		super();
+		this.professorId = professorId;
+		this.professorName = professorName;
+	}
+	private String professorName;
+	/**
+	 * @return the professorId
+	 */
+	public int getProfessorId() {
+		return professorId;
 	}
 	/**
-	 * @param empId the empId to set
+	 * @param professorId the professorId to set
 	 */
-	public void setEmpId(String empId) {
-		this.empId = empId;
+	public void setProfessorId(int professorId) {
+		this.professorId = professorId;
 	}
 	/**
-	 * @return the empDepartment
+	 * @return the professorName
 	 */
-	public String getEmpDepartment() {
-		return empDepartment;
+	public String getProfessorName() {
+		return professorName;
 	}
 	/**
-	 * @param empDepartment the empDepartment to set
+	 * @param professorName the professorName to set
 	 */
-	public void setEmpDepartment(String empDepartment) {
-		this.empDepartment = empDepartment;
-	}
-	/**
-	 * @return the courseAllocation
-	 */
-	public String getCourseAllocation() {
-		return courseAllocation;
-	}
-	/**
-	 * @param courseAllocation the courseAllocation to set
-	 */
-	public void setCourseAllocation(String courseAllocation) {
-		this.courseAllocation = courseAllocation;
+	public void setProfessorName(String professorName) {
+		this.professorName = professorName;
 	}
 	
+
 }

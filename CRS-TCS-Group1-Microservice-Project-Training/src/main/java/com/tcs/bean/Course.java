@@ -8,21 +8,57 @@ package com.tcs.bean;
  *
  */
 public class Course {
-	private String courseId;
+	private int courseId;
+	private String courseName;
+	
+	private String courseDuration;
 	private String department;
-	private String courseDescription;
-	private Professor professor;
+	
 	/**
 	 * @return the courseId
 	 */
-	public String getCourseId() {
+	public Course(int courseId,String courseName,String courseDuration,String department) {
+		this.courseId=courseId;
+		this.courseName=courseName;
+		this.courseDuration=courseDuration;
+		this.department=department;
+	}
+	public Course() {}
+	/**
+	 * @return the courseId
+	 */
+	public int getCourseId() {
 		return courseId;
 	}
 	/**
 	 * @param courseId the courseId to set
 	 */
-	public void setCourseId(String courseId) {
+	public void setCourseId(int courseId) {
 		this.courseId = courseId;
+	}
+	/**
+	 * @return the courseName
+	 */
+	public String getCourseName() {
+		return courseName;
+	}
+	/**
+	 * @param courseName the courseName to set
+	 */
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+	/**
+	 * @return the courseDuration
+	 */
+	public String getCourseDuration() {
+		return courseDuration;
+	}
+	/**
+	 * @param courseDuration the courseDuration to set
+	 */
+	public void setCourseDuration(String courseDuration) {
+		this.courseDuration = courseDuration;
 	}
 	/**
 	 * @return the department
@@ -36,30 +72,10 @@ public class Course {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	/**
-	 * @return the courseDescription
-	 */
-	public String getCourseDescription() {
-		return courseDescription;
-	}
-	/**
-	 * @param courseDescription the courseDescription to set
-	 */
-	public void setCourseDescription(String courseDescription) {
-		this.courseDescription = courseDescription;
-	}
-	/**
-	 * @return the professor
-	 */
-	public Professor getProfessor() {
-		return professor;
-	}
-	/**
-	 * @param professor the professor to set
-	 */
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
-	}
+		
+		
+	
+	
 	
 	
 }

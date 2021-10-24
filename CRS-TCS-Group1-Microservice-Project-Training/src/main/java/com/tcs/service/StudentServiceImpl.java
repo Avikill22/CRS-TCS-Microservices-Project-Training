@@ -8,64 +8,46 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.tcs.bean.Student;
 import com.tcs.dao.StudentDAOInterface;
+import com.tcs.exception.StudentNotRegisteredException;
 
 /**
- * @author Avinash Gupta
+ * @author ashwi
  *
  */
 @Component
-public class StudentServiceImpl implements StudentServiceInterface {
-	@Autowired 
-	private StudentDAOInterface students;
+@Service
+public class StudentServiceImpl implements StudentServiceInterface{
 
+	@Autowired
+	private StudentDAOInterface students;
 	@Override
 	public List studentList() throws SQLException {
 		// TODO Auto-generated method stub
 		return students.list();
 	}
 
-//	@Override
-//	public List studentList() {
-//		// TODO Auto-generated method stub
-//		return students.list();
-//	}
 	@Override
 	public Student getId(int id) throws SQLException {
-		
+		// TODO Auto-generated method stub
 		return students.getId(id);
 	}
-//
-//	@Override
-//	public Student create(Student student) {
-//		// TODO Auto-generated method stub
-//		return students.create(student);
-//	}
-//
+
+	
+
 	@Override
-	public Student delete(int id) throws SQLException {
+	public Student insert(Student student) throws SQLException, StudentNotRegisteredException {
 		// TODO Auto-generated method stub
-		return students.delete(id);
-	}
-//
-	@Override
-	public Student update(int id, Student student)throws SQLException {
-		// TODO Auto-generated method stub
-		return students.update(id, student);
-	}
-//
-	@Override
-	public Student insert(Student student) throws SQLException {
 		return students.insert(student);
 	}
 
-//@Override
-//public Student delete(int id) throws SQLException {
-//	// TODO Auto-generated method stub
-//	return null;
-//}
-	
-	
+	@Override
+	public Student update(int id, Student student) throws SQLException {
+		// TODO Auto-generated method stub
+		return students.update(id, student);
+	}
+
 }
